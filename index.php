@@ -11,20 +11,20 @@ $txns=$DB->listTransactions();
     <body>
         <h1 style="color: #5e9ca0;">Budget Tracking</h1>
         <p>&nbsp;</p>
-        <h2 style="color: #2e6c80;">Quick look:</h2>
+        <h2>Quick look:</h2>
         <p>Month: November</p>
         <table class="editorDemoTable" style="width: 342px;" border="1">
         <thead>
         <tr>
-            <td style="width: 148px;">Type</td>
-            <td style="width: 148px;">Category</td>
-            <td style="width: 182px;">Amount</td>
+            <td>Type</td>
+            <td>Category</td>
+            <td>Amount</td>
         </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="width: 148px;">Bills remaining</td>
-                <td style="width: 182px;">&nbsp;</td>
+                <td>Bills remaining</td>
+                <td>&nbsp;</td>
             </tr>
             <?php
             foreach ($txns as $value){
@@ -38,12 +38,10 @@ $txns=$DB->listTransactions();
 
 
             ?>
-            <tr>
-                <td style="width: 148px;">Other</td>
-                <td style="width: 182px;">&nbsp;</td>
-            </tr>
         </tbody>
         </table>
+        <br />
+        <br />
         <p><strong>&nbsp;Add Item</strong></p>
 
         <form action="pross.php" method="post">
