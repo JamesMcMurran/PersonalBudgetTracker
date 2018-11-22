@@ -2,7 +2,7 @@
 <p>&nbsp;</p>
 <h2 style="color: #2e6c80;">Quick look:</h2>
 <p>Month: November</p>
-<table class="editorDemoTable" style="width: 342px;">
+<table class="editorDemoTable" style="width: 342px;" border="1">
 <thead>
 <tr>
 <td style="width: 148px;">&nbsp;</td>
