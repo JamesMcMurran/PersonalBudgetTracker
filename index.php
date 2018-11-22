@@ -3,8 +3,8 @@
 require_once 'DB.php';
 
 $DB= new \budget\DB();
-$txns=$DB->listMovies();
-
+$txsn=$DB->listTransactions();
+var_dump($txsn);
 
 ?>
 <html>

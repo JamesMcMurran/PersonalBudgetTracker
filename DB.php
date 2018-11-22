@@ -39,9 +39,9 @@ class DB
 		}
 	}
 	/**
-	 * Just a simple function to get a list of movies
+	 * Just a simple function to get a list of TXNs
 	 */
-	public function listMovies (){
+	public function listTransactions (){
 		$sql="SELECT `type`,sum(amount) as amount,category FROM transactions group by `type`,category;";
 		$data = array();
 		if ($result = $this->mysqli->query($sql)) {
