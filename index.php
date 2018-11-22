@@ -1,3 +1,9 @@
+<?php
+
+require_once 'DB.php';
+
+?>
+
 <h1 style="color: #5e9ca0;">Budget Tracking</h1>
 <p>&nbsp;</p>
 <h2 style="color: #2e6c80;">Quick look:</h2>
@@ -48,22 +54,24 @@
 </tr>
 </tbody>
 </table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <p><strong>&nbsp;Add Item</strong></p>
-<form><select>
-<option value="Bill">Bill</option>
-<option value="Food">Food</option>
-<option value="Other">Other</option>
-</select>
-<p>&nbsp;</p>
-</form><form>
-<p><br />Category<br /> <input id="Catagory" type="text" /></p>
-</form><form>
-<p>Name<br /> <input id="Catagory" type="text" /></p>
-<p>&nbsp;</p>
+
+<form action="pross.php" method="post">
+    <select name="type" id="type">
+        <option value="Bill">Bill</option>
+        <option value="Food">Food</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <br />
+
+    <p>Category <br /> <input name="category" id="category" type="text" /></p>
+    <p>Name     <br /> <input name="name"     id="name"     type="text" /></p>
+
+    <input type="submit" value="Submit">
+
 </form>
-<p><strong>Bill&nbsp;</strong><strong>- Gas Electric Car<br /></strong><strong>Food </strong><strong>- Groshires Restaurant&nbsp;</strong></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<p>
+    <strong>Bill&nbsp;- Gas Electric Car<br />
+        Food - Groshires Restaurant&nbsp;</strong>
+</p>
