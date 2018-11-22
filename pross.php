@@ -14,7 +14,7 @@ if(!empty($_POST['category'])){
 	$name = $_POST['name'];
 	$amount = $_POST['amount'];
 
-	$DB->insertMovie($type,$category,$name,$amount);
+	$DB->insertTransaction($type,$category,$name,$amount);
 }else{
     echo 'No data sent';
 }
