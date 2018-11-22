@@ -39,9 +39,9 @@ var_dump($txns);
             foreach ($txns as $value){
                 echo "
             <tr>
-                <td >{$value['type']}</td>
-                <td >{$value['category']}</td>
-                <td >{$value['amount']}</td>
+                <td >{$value->type}</td>
+                <td >{$value->category}</td>
+                <td >{$value->amount}</td>
             </tr>";
             }
 
