@@ -42,7 +42,7 @@ class DB
 	 * Just a simple function to get a list of movies
 	 */
 	public function listMovies (){
-		$sql="SELECT `type`,sum(amount) as amount,category,`date` FROM transactions group by `type`,category;";
+		$sql="SELECT `type`,sum(amount) as amount,category FROM transactions group by `type`,category;";
 		$data = array();
 		if ($result = $this->mysqli->query($sql)) {
 			while($row = $result->fetch_object()){

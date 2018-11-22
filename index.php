@@ -20,7 +20,6 @@ $txns=$DB->listMovies();
             <td style="width: 148px;">Type</td>
             <td style="width: 148px;">Category</td>
             <td style="width: 182px;">Amount</td>
-            <td style="width: 182px;">Date</td>
         </tr>
         </thead>
         <tbody>
@@ -43,7 +42,6 @@ $txns=$DB->listMovies();
                 <td >{$value['type']}</td>
                 <td >{$value['category']}</td>
                 <td >{$value['amount']}</td>
-                <td >{$value['date']}</td>
             </tr>";
             }
 
