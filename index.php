@@ -44,13 +44,6 @@ require_once 'DB.php';
 <td style="width: 148px;">Other</td>
 <td style="width: 182px;">&nbsp;</td>
 </tr>
-<tr>
-<td style="width: 148px;">&nbsp;</td>
-<td style="width: 182px;">&nbsp;</td>
-</tr>
-<tr>
-<td style="width: 148px;">&nbsp;</td>
-<td style="width: 182px;">&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -67,6 +60,7 @@ require_once 'DB.php';
 
     <p>Category <br /> <input name="category" id="category" type="text" /></p>
     <p>Name     <br /> <input name="name"     id="name"     type="text" /></p>
+    <p>Amount   <br /> <input name="amount"   id="amount"   type="text" /></p>
 
     <input type="submit" value="Submit">
 
