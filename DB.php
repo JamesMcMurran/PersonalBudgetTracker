@@ -28,7 +28,7 @@ class DB
 
 	public function insertTransaction ($type,$category,$name,$amount,$date){
 		if (!($stmt = $this->mysqli->prepare("INSERT INTO `movieList`.`transactions` (`type`, `category`, `name`, `amount`,`date`) 
-													VALUES (?, ?, ?, ?);"))) {
+													VALUES (?, ?, ?, ?, ?);"))) {
 			echo "Prepare failed: (" . $this->mysqli->errno . ") " . $this->mysqli->error;
 		}
 		if (!$stmt->bind_param("sssis",$type,$category,$name,$amount,$date)) {
