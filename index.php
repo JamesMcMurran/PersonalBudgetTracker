@@ -2,6 +2,10 @@
 
 require_once 'DB.php';
 
+$DB= new \budget\DB();
+
+var_dump($DB->listMovies());
+
 ?>
 
 <h1 style="color: #5e9ca0;">Budget Tracking</h1>
@@ -61,11 +65,12 @@ require_once 'DB.php';
     <p>Category <br /> <input name="category" id="category" type="text" /></p>
     <p>Name     <br /> <input name="name"     id="name"     type="text" /></p>
     <p>Amount   <br /> <input name="amount"   id="amount"   type="text" /></p>
+    <p>Date     <br /> <input name="date"     id="date"     type="datetime" /></p>
 
     <input type="submit" value="Submit">
 
 </form>
 <p>
-    <strong>Bill&nbsp;- Gas Electric Car<br />
+    <strong>Bill&nbsp;- Gas Electric Loan Water Medical<br />
         Food - Groshires Restaurant&nbsp;</strong>
 </p>

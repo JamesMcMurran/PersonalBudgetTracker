@@ -13,8 +13,12 @@ if(!empty($_POST['category'])){
 	$category = $_POST['category'];
 	$name = $_POST['name'];
 	$amount = $_POST['amount'];
+    $date = $_POST['date'];
 
-	$DB->insertTransaction($type,$category,$name,$amount);
+	$DB->insertTransaction($type,$category,$name,$amount,$date);
+
+    var_dump([$type,$category,$name,$amount,$date]);
+
 }else{
     echo 'No data sent';
 }

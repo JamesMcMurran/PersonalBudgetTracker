@@ -26,12 +26,12 @@ class DB
 	}
 
 
-	public function insertTransaction ($type,$category,$name,$amount){
-		if (!($stmt = $this->mysqli->prepare("INSERT INTO `movieList`.`transactions` (`type`, `category`, `name`, `amount`) 
+	public function insertTransaction ($type,$category,$name,$amount,$date){
+		if (!($stmt = $this->mysqli->prepare("INSERT INTO `movieList`.`transactions` (`type`, `category`, `name`, `amount`,`date`) 
 													VALUES (?, ?, ?, ?);"))) {
 			echo "Prepare failed: (" . $this->mysqli->errno . ") " . $this->mysqli->error;
 		}
-		if (!$stmt->bind_param("sssi",$type,$category,$name,$amount)) {
+		if (!$stmt->bind_param("sssis",$type,$category,$name,$amount,$date)) {
 			echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 		}
 		if (!$stmt->execute()) {
@@ -41,12 +41,8 @@ class DB
 	/**
 	 * Just a simple function to get a list of movies
 	 */
-	public function listMovies ($title="DESC",$format="DESC",$length="DESC",$year="DESC",$rating="DESC"){
-		$sql="SELECT 
-				    *
-				FROM
-				    movieList.movies
-				ORDER BY title $title , `format` $format , `length` $length , `year` $year , rating $rating;";
+	public function listMovies (){
+		$sql="SELECT `type`,sum(amount) as amount,category FROM transactions group by `type`,category;";
 		$data = array();
 		if ($result = $this->mysqli->query($sql)) {
 			while($row = $result->fetch_object()){
@@ -58,6 +54,8 @@ class DB
 		//$result->close();
 		return $data;
 	}
+
+
 	private function update (){
 	}
 	/**
