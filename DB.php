@@ -31,7 +31,7 @@ class DB
 													VALUES (?, ?, ?, ?);"))) {
 			echo "Prepare failed: (" . $this->mysqli->errno . ") " . $this->mysqli->error;
 		}
-		if (!$stmt->bind_param("ssiii",$type,$category,$name,$amount)) {
+		if (!$stmt->bind_param("sssi",$type,$category,$name,$amount)) {
 			echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 		}
 		if (!$stmt->execute()) {
