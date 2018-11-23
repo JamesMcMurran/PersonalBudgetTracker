@@ -6,6 +6,7 @@ $DB= new \budget\DB();
 $txns=$DB->listTransactions();
 
 $MonthlyBudgets = getenv('MonthlyBudgets');
+$Total=array();
 
 ?>
 <html>
