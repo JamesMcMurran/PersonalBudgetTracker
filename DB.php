@@ -43,15 +43,15 @@ class DB
 	 */
 	public function listTransactions (){
 
-	    $start =  date('Y-m-01').' 00:00:00';
-	    $end = date('Y-m-t').' 00:00:00';
+	    $start =  date('Y-m-01');
+	    $end = date('Y-m-t');
 
 		$sql="SELECT 
                 `type`, SUM(amount) AS amount, category
             FROM
                 transactions
             WHERE
-                `date` BETWEEN $start AND $end
+                `date` BETWEEN \"$start\" AND \"$end\"
             GROUP BY `type` , category;";
 
 		$data = array();
