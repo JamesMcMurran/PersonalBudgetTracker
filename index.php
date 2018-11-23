@@ -26,7 +26,13 @@ $Total=array();
         </thead>
             <?php
             foreach ($txns as $value){
-                $Total[$value->type]+=$value->amount;
+
+                if(isset($Total[$value->type])){
+                    $Total[$value->type]+=$value->amount;
+                }else{
+                    $Total[$value->type]=$value->amount;
+                }
+
                 echo "
             <tr>
                 <td >{$value->type}</td>
