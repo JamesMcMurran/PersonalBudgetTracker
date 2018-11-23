@@ -5,6 +5,8 @@ require_once 'DB.php';
 $DB= new \budget\DB();
 $txns=$DB->listTransactions();
 
+$MonthlyBudgets = getenv('MonthlyBudgets');
+
 ?>
 <html>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -13,19 +15,15 @@ $txns=$DB->listTransactions();
         <p>&nbsp;</p>
         <h2>Quick look:</h2>
         <p>Month: November</p>
-        <table class="editorDemoTable" style="width: 342px;" border="1">
+        <table class="editorDemoTable" border="1">
         <thead>
-        <tr>
-            <td>Type</td>
-            <td>Category</td>
-            <td>Amount</td>
-        </tr>
+            <tr>
+                <td>Type</td>
+                <td>Category</td>
+                <td>Amount</td>
+            </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Bills remaining</td>
-                <td>&nbsp;</td>
-            </tr>
             <?php
             foreach ($txns as $value){
                 echo "
@@ -34,6 +32,17 @@ $txns=$DB->listTransactions();
                 <td >{$value->category}</td>
                 <td >{$value->amount}</td>
             </tr>";
+
+                if(isset($MonthlyBudgets[$value->type][$value->category])){
+                    $remaining = $MonthlyBudgets[$value->type][$value->category] - $value->amount;
+                    echo "
+                    <tr>
+                        <td >{$value->type} Remaining</td>
+                        <td >{$value->category} Remaining</td>
+                        <td >{$remaining}</td>
+                    </tr>";
+
+                }
             }
 
 
