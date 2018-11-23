@@ -23,7 +23,6 @@ $MonthlyBudgets = getenv('MonthlyBudgets');
                 <td>Amount</td>
             </tr>
         </thead>
-        <tbody>
             <?php
             foreach ($txns as $value){
                 echo "
