@@ -42,7 +42,18 @@ class DB
 	 * Just a simple function to get a list of TXNs
 	 */
 	public function listTransactions (){
-		$sql="SELECT `type`,sum(amount) as amount,category FROM transactions group by `type`,category;";
+
+	    $start =  date('Y-m-01').' 00:00:00';
+	    $end = date('Y-m-t').' 00:00:00';
+
+		$sql="SELECT 
+                `type`, SUM(amount) AS amount, category
+            FROM
+                transactions
+            WHERE
+                `date` BETWEEN $start AND $end
+            GROUP BY `type` , category;";
+
 		$data = array();
 		if ($result = $this->mysqli->query($sql)) {
 			while($row = $result->fetch_object()){
