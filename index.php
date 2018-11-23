@@ -25,6 +25,7 @@ $MonthlyBudgets = getenv('MonthlyBudgets');
         </thead>
             <?php
             foreach ($txns as $value){
+                $Total[$value->type]+=$value->amount;
                 echo "
             <tr>
                 <td >{$value->type}</td>
@@ -44,6 +45,15 @@ $MonthlyBudgets = getenv('MonthlyBudgets');
                 }
             }
 
+
+            foreach ($Total as $key=>$value){
+                echo "
+            <tr>
+                <td >{$key}</td>
+                <td > </td>
+                <td >{$value}</td>
+            </tr>";
+            }
 
             ?>
         </tbody>
