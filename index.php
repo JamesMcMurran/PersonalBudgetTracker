@@ -11,6 +11,7 @@ require_once 'DB.php';
 
 $DB= new \budget\DB();
 $txns=$DB->listTransactions();
+$lastMonthTxns=$DB->listTransactions( date('Y-10-01'),date('Y-10-31'));
 
 $MonthlyBudgets = getenv('MonthlyBudgets');
 $Total=array();
@@ -109,12 +110,14 @@ $Total=array();
             <p>Name     <br /> <input name="name"     id="name"     type="text" /></p>
             <p>Amount   <br /> <input name="amount"   id="amount"   type="text" /></p>
             <p>Date     <br /> <input name="date"     id="date"     type="date" /></p>
+            <p>Notes    <br /> <input name="notes"    id="notes"    type="date" /></p>
+            <p>Recurring<br /> <input name="recurring"id="recurring"type="text" /></p>
 
             <input type="submit" value="Submit">
 
         </form>
         <p>
-            <strong>Bill&nbsp;- Gas Electric Loan Water Medical<br />
+            <strong>Bill&nbsp;- Utilities Loan Doctor<br />
                 Food - Groshires Restaurant&nbsp;</strong>
         </p>
     </body>

@@ -26,12 +26,13 @@ class DB
 	}
 
 
-	public function insertTransaction ($type,$category,$name,$amount,$date){
-		if (!($stmt = $this->mysqli->prepare("INSERT INTO `movieList`.`transactions` (`type`, `category`, `name`, `amount`,`date`) 
-													VALUES (?, ?, ?, ?, ?);"))) {
+
+	public function insertTransaction ($type,$category,$name,$amount,$date,$recurring,$notes){
+		if (!($stmt = $this->mysqli->prepare("INSERT INTO `movieList`.`transactions` (`type`, `category`, `name`, `amount`,`date`,recurring,notes)
+													VALUES (?, ?, ?, ?, ?,?,?);"))) {
 			echo "Prepare failed: (" . $this->mysqli->errno . ") " . $this->mysqli->error;
 		}
-		if (!$stmt->bind_param("sssds",$type,$category,$name,$amount,$date)) {
+		if (!$stmt->bind_param("sssdsis",$type,$category,$name,$amount,$date,$recurring,$notes)) {
 			echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 		}
 		if (!$stmt->execute()) {
@@ -40,18 +41,24 @@ class DB
 	}
 	/**
 	 * Just a simple function to get a list of TXNs
+     * defaults to current month
 	 */
-	public function listTransactions (){
+	public function listTransactions ($start = '',$end= ''){
 
-	    $start =  date('Y-m-01');
-	    $end = date('Y-m-t');
+	    if(empty($start)){
+	        $start =  date('Y-m-01');
+        }
+        if(empty($end)){
+            $end = date('Y-m-t');
+        }
 
 		$sql="SELECT 
-                `type`, SUM(amount) AS amount, category
+                `type`, SUM(amount) AS amount, category,recurring
             FROM
                 transactions
             WHERE
                 `date` BETWEEN \"$start\" AND \"$end\"
+                AND active = 1
             GROUP BY `type` , category;";
 
 		$data = array();

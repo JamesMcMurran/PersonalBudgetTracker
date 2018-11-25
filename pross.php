@@ -14,10 +14,12 @@ if(!empty($_POST['category'])){
 	$name = $_POST['name'];
 	$amount = $_POST['amount'];
     $date = $_POST['date'];
+    $recurring = $_POST['recurring'];
+    $notes = $_POST['notes'];
 
-	$DB->insertTransaction($type,$category,$name,$amount,$date);
+	$DB->insertTransaction($type,$category,$name,$amount,$date,$recurring,$notes);
 
-    var_dump([$type,$category,$name,$amount,$date]);
+    var_dump([$type,$category,$name,$amount,$date,$recurring,$notes]);
 
 }else{
     echo 'No data sent';
