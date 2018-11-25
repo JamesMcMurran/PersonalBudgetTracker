@@ -53,7 +53,7 @@ class DB
         }
 
 		$sql="SELECT 
-                `type`, SUM(amount) AS amount, category,recurring
+                `type`, SUM(amount) AS amount, category
             FROM
                 transactions
             WHERE
