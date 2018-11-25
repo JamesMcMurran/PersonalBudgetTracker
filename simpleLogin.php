@@ -5,11 +5,11 @@ include '.env';
 if(!empty($_POST['password'])) {
     if ($_POST['password'] == $_ENV['PASSWORD']) {
         $_SESSION['user'] = 1;
+    }else{
+        echo "Invalid password";
     }
 }else{?>
-
-    <!-- Button to open the modal login form -->
-    <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- The Modal -->
     <div id="id01" class="modal">
@@ -21,9 +21,9 @@ if(!empty($_POST['password'])) {
 
 
             <div class="container">
-                <label for="uname"><b>Username</b></label>
+               <!-- <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
-
+                -->
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
