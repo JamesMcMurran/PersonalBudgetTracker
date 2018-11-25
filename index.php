@@ -110,7 +110,7 @@ $Total=array();
             <p>Name     <br /> <input name="name"     id="name"     type="text" /></p>
             <p>Amount   <br /> <input name="amount"   id="amount"   type="text" /></p>
             <p>Date     <br /> <input name="date"     id="date"     type="date" /></p>
-            <p>Notes    <br /> <input name="notes"    id="notes"    type="date" /></p>
+            <p>Notes    <br /> <input name="notes"    id="notes"    type="text" /></p>
             <p>Recurring<br /> <input name="recurring"id="recurring"type="text" /></p>
 
             <input type="submit" value="Submit">
