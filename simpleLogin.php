@@ -11,6 +11,9 @@ if(!empty($_POST['password'])) {
 }else{?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <!-- Button to open the modal login form -->
+    <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+
     <!-- The Modal -->
     <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'"
