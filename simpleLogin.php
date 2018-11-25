@@ -2,8 +2,8 @@
 
 include '.env';
 
-if(!empty($_POST['PASSWORD'])) {
-    if ($_POST['PASSWORD'] == $_ENV['PASSWORD']) {
+if(!empty($_POST['password'])) {
+    if ($_POST['password'] == $_ENV['PASSWORD']) {
         $_SESSION['user'] = 1;
     }
 }else{?>
@@ -25,7 +25,7 @@ if(!empty($_POST['PASSWORD'])) {
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
                 <button type="submit">Login</button>
                 <label>
