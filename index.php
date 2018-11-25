@@ -54,9 +54,9 @@ $Total=array();
 
             echo"
             <tr>
-                <td ></td>
-                <td ></td>
-                <td ></td>
+                <td >---</td>
+                <td >---</td>
+                <td >---</td>
             </tr>";
 
             $allTotal = 0;
@@ -73,9 +73,9 @@ $Total=array();
 
             echo"
             <tr>
-                <td ></td>
-                <td ></td>
-                <td ></td>
+                <td >---</td>
+                <td >---</td>
+                <td >---</td>
             </tr>
             <tr>
                 <td >Total</td>
