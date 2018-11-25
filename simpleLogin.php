@@ -9,17 +9,11 @@ if(!empty($_POST['password'])) {
         echo "Invalid password";
     }
 }else{?>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- Button to open the modal login form -->
-    <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+-->
 
-    <!-- The Modal -->
-    <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'"
-        class="close" title="Close Modal">&times;</span>
-
-        <!-- Modal Content -->
+       <!-- Modal Content -->
         <form class="modal-content animate" action="/simpleLogin.php">
 
 
@@ -41,6 +35,5 @@ if(!empty($_POST['password'])) {
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
         </form>
-    </div>
 
 <?php } ?>
