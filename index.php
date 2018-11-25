@@ -52,8 +52,9 @@ $Total=array();
                 }
             }
 
-
+            $allTotal = 0;
             foreach ($Total as $key=>$value){
+                $allTotal += $value;
                 echo "
             <tr>
                 <td >{$key}</td>
@@ -62,7 +63,14 @@ $Total=array();
             </tr>";
             }
 
-            ?>
+
+            echo"
+            <tr>
+                <td >Total</td>
+                <td > </td>
+                <td >{$allTotal}</td>
+            </tr>";
+?>
         </tbody>
         </table>
         <br />
