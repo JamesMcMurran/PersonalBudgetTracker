@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['user'])){
+    echo '<a href="http://smartbudgettracker.com/simpleLogin.php>Login</a>"';
+    die();
+}
+
 
 require_once 'DB.php';
 
