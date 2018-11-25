@@ -3,7 +3,7 @@
 include '.env';
 
 if(!empty($_POST['password'])) {
-    if ($_POST['password'] == $_ENV['PASSWORD']) {
+    if ($_POST['password'] == getenv('PASSWORD')) {
         $_SESSION['user'] = 1;
     }else{
         echo "Invalid password";
