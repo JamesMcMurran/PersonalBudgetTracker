@@ -14,7 +14,7 @@ if(!empty($_POST['password'])) {
 -->
 
        <!-- Modal Content -->
-        <form class="modal-content animate" action="/simpleLogin.php">
+        <form class="modal-content animate" action="/simpleLogin.php" method="post">
 
 
             <div class="container">
