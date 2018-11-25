@@ -1,10 +1,13 @@
 <?php
+session_start();
 
 include '.env';
 
 if(!empty($_POST['password'])) {
     if ($_POST['password'] == getenv('PASSWORD')) {
         $_SESSION['user'] = 1;
+        echo 'You are now logged in. <br/>';
+        echo '<a href="http://smartbudgettracker.com/index.php">Home page</a>';
     }else{
         echo "Invalid password";
     }
